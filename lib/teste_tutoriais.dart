@@ -91,9 +91,11 @@ for (inicializacao; condicao; incremento) {
 }
 
 break: sai do loop. 
-
 continue: pula a iteracao atual e continua pra proxima
 
+while (condicao) {
+  // executa um codigo enquanto a condicao for verdadeira
+}
 
 
 */
@@ -101,26 +103,13 @@ continue: pula a iteracao atual e continua pra proxima
   @override
   Widget build(BuildContext context) {
     
-    for (int i = 0; i <= 5; i++) {
-      print(i); 
-      //nesse caso, imprime os numeros de 0 a 5+
+    int contagem = 5;
+    while (contagem > 0) {
+      print(contagem);
+      contagem--;
     }
 
-    for (int i = 0; i <=8; i++) {
-      if(i == 6) {
-        break;
-      }
-    print(i); 
-      //nesse caso, imprime os numeros de 0 a 5, para quando chega no 6
-    }
 
-    for (int i = 0; i <=8; i++) {
-      if(i == 6) {
-        continue;
-      }
-    print(i); 
-      //nesse caso, imprime os numeros de 0 a 8, mas quando chega no 6, pula o numero e continua o loop
-    }
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(),
