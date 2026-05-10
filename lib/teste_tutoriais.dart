@@ -105,27 +105,25 @@ void nomeDaFuncao(parametros) {
   // codigo da funcao
 }
 
-*/
-
-// funcao basica
-void greet() {
-  print("Ola Juanzin!");
+tipoDeRetorno nomeDaFuncao(parametros) {
+  // codigo da funcao
+  return valor; // retorna um valor do tipo especificado
 }
 
-// funcao com parametros
-void greetPerson(String name) {
-  print("Ola, " + name);
-  }
+*/
 
+// funcao com tipo de retorno
+int add(int a, int b) {
+  int sum = a + b;
+  return sum;
+}
 
   @override
   Widget build(BuildContext context) {
 
-    greet();
-    //executa a funcao de recepcao, imprimindo a mensagem dentro dela.
-    greetPerson("Juanzin");
-    //executa a funcao com parametros e fornece o nome Juanzin para a funcao.
-    //nesse caso, imprime "Ola, Juanzin"
+   int minhaSoma = add(3,5);
+   print(minhaSoma); 
+   // nesse caso, imprime 8 no console
 
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
