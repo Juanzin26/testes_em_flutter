@@ -18,6 +18,7 @@ double pi = 3.14;
 bool ehIniciante = true; // true or false values
 
 /*
+
 Operadores Basicos
 1 + 1 - 2, adicao
 2 - 1 = 1, subtracao
@@ -48,9 +49,8 @@ exemplo: (idade > 18) || ehIniciante // retorna true nesse caso, pois pelo menos
 operador NOT (!): retorna true se o lado for false e retorna false se o lado for true,
 !true = false, !false = true
 exemplo: !ehIniciante // retorna false nesse caso, pois ehIniciante é true, e o operador NOT inverte o valor pra false
- */
 
-/*
+------------------------------------------------------------------
 
 CONTROLE DE FLUXO
 
@@ -97,18 +97,35 @@ while (condicao) {
   // executa um codigo enquanto a condicao for verdadeira
 }
 
+------------------------------------------------------------------
+
+FUNCOES E METODOS
+
+void nomeDaFuncao(parametros) {
+  // codigo da funcao
+}
 
 */
 
+// funcao basica
+void greet() {
+  print("Ola Juanzin!");
+}
+
+// funcao com parametros
+void greetPerson(String name) {
+  print("Ola, " + name);
+  }
+
+
   @override
   Widget build(BuildContext context) {
-    
-    int contagem = 5;
-    while (contagem > 0) {
-      print(contagem);
-      contagem--;
-    }
 
+    greet();
+    //executa a funcao de recepcao, imprimindo a mensagem dentro dela.
+    greetPerson("Juanzin");
+    //executa a funcao com parametros e fornece o nome Juanzin para a funcao.
+    //nesse caso, imprime "Ola, Juanzin"
 
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
