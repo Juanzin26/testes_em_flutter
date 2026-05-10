@@ -6,7 +6,12 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
+
+  // funcao do que acontece quando o usuario clicar
+  void usuarioClicou() {
+    print('usuario clicou!');
+  }
 
 
   @override
@@ -14,31 +19,22 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Stack(  
-          alignment: Alignment.center, // Alinhamento central para os containers
-          children: [
-
-            Container(
-              height: 300,
-              width: 300,
-              color: Colors.blue,
-            ),
-
-            Container(
+        body: Center(
+          child: GestureDetector( // widget que detecta gestos, como cliques
+            onTap: usuarioClicou,
+            child: Container(
               height: 200,
               width: 200,
-              color: Colors.red
+              color: Colors.blue,
+              child: Center(
+              child: Text(
+                'Clique em mim!',
+              ),
             ),
-
-            Container(
-              height: 100,
-              width: 100,
-              color: Colors.green
             ),
-
-          ],
           ),
         ),
+      ),
       );
     }
   }
