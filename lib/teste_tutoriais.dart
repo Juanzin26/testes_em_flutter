@@ -6,23 +6,26 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+  const MyApp({super.key});
 
-List nomes = ["Juan", "Fernanda", "Oliver"];
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: ListView.builder( // ListView.builder cria uma lista dinâmica
-          itemCount: nomes.length, // itemCount para definir o número de itens na lista
-          itemBuilder: (context, index) => ListTile(  // ListTile para criar uma linha de item
-              title: Text(nomes[index]), // Text(nomes[index]) para mostrar o nome do item de index x
-
+        body: GridView.builder(
+          itemCount: 64, // quantidade total de itens no grid
+          gridDelegate: 
+            SliverGridDelegateWithFixedCrossAxisCount( // define o layout do grid
+              crossAxisCount: 4 // quantidade de colunas
             ),
-          ),
+            itemBuilder: (context, index) => Container( // cada item do grid
+              color: Colors.blue,
+              margin: EdgeInsets.all(2), // espaço entre os containers
+              ),
+            ),
         ),
-    );
+      );
+    }
   }
-}
