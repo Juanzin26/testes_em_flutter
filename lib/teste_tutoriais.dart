@@ -14,37 +14,51 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Colors.blue,
-        appBar: AppBar(
-          title: Text('Minha App Bar'),
-          backgroundColor: Colors.blue,
-          elevation: 0, // Remove a sombra da AppBar
-          leading: Icon(Icons.menu), // Ícone do menu à esquerda
-          actions: [
-            IconButton(
-              onPressed: () {},
-                icon: Icon(Icons.logout)// Ação a ser executada quando o ícone de pesquisa for pressionado
+        body: Column( 
+
+          // crossAxisAlignment: CrossAxisAlignment.start, Alinhamento dos elementos no eixo horizontal, com todos os elementos alinhados à esquerda
+          // crossAxisAlignment: CrossAxisAlignment.center, Alinhamento dos elementos no eixo horizontal, com todos os elementos alinhados ao centro
+          // crossAxisAlignment: CrossAxisAlignment.end, Alinhamento dos elementos no eixo horizontal, com todos os elementos alinhados à direita
+          // mainAxisAlignment: MainAxisAlignment.center, no centro da tela
+          // mainAxisAlignment: MainAxisAlignment.end, no final da tela
+          // mainAxisAlignment: MainAxisAlignment.spaceEvenly, espaçamento igual entre os elementos
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween, o primeiro elemento fica no início, o último no final e os outros ficam espaçados entre eles
+
+          children: [
+
+            // Container 1 
+            Expanded(
+              child: Container(
+              // width: 200, largura
+              // height: 200, altura
+                color: Colors.green,
+              ),
             ),
+
+
+            // Container 2
+            Expanded(
+              flex: 2, // O Container 2 ocupará o dobro do espaço em relação aos outros Containers
+              child: Container(
+              // width: 200,
+              // height: 200,
+                color: Colors.red,
+              ),
+            ),
+
+
+            // Container 3
+            Expanded(
+              child: Container(
+                // width: 200,
+                // height: 200,
+                color: Colors.yellow,
+              ),
+            ),
+
+
           ],
-        ),
-        body: Center( 
-          child: Container(
-            height: 250,
-            width: 250,
-            decoration: BoxDecoration(
-              color: Colors.green,
-              borderRadius: BorderRadius.circular(20), // Borda arredondada
-            ),
-            padding: EdgeInsets.all(25), // Margem interna de todos os lados
-            // padding: EdgeInsets.only(top: 25, left: 25), Margem interna do topo e da esquerda
-            // padding: EdgeInsets.symmetric(horizontal: 25, vertical: 25), // Margem interna horizontal e vertical
-            child: Icon(
-              Icons.favorite, 
-              color: Colors.white, 
-              size: 64,
-            )
-          ),
-        ),
+        )
       ),
     );
   }
