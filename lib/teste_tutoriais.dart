@@ -3,11 +3,12 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MyApp());
 
-  print("Olá, mundo!");
-  print(1+1);
-  print(2*3);
-  print(6/2);
-  print(10%3);
+ print(9==9); // imprime true
+ print(9!=9); // imprime false
+ print(9>5); // imprime true
+ print(9<5); // imprime false
+ print(9>=9); // imprime true
+ print(9<=9); // imprime true
 }
 
 class MyApp extends StatelessWidget {
@@ -26,6 +27,16 @@ Operadores Basicos
 2 * 3 = 6, multiplicacao
 6 / 2 = 3, divisao
 10 % 3 = 1, resto da divisao
+
+Operadores de comparacao
+1 == 1, igual a, true
+1 != 2, diferente de, true
+1 > 0, maior que, true
+1 < 2, menor que, true
+3 < 2, menor que, false
+1 >= 1, maior ou igual a, true
+1 <= 2, menor ou igual a, true
+
  */
 
   @override
