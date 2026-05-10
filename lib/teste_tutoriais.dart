@@ -118,12 +118,69 @@ int add(int a, int b) {
   return sum;
 }
 
+/*
+
+------------------------------------------------------------------
+
+ESTRUTURAS DE DADOS
+
+*/
+
+// LISTA: uma colecao ordenada de elementos, onde cada elemento tem um indice, e pode ser de qualquer tipo de dado
+List<int> numeros = [1, 2, 3]; // lista de numeros
+// numeros[0] -> 1, 
+// numeros[1] -> 2, 
+// numeros[2] -> 3
+
+List<String> nomes = ["Juanzin", "Fernanda", "Cleber", "Juanzin"]; // lista de nomes
+// nomes[0] -> "Juanzin", 
+// nomes[1] -> "Fernanda", 
+// nomes[2] -> "Cleber",
+// nomes[3] -> "Juanzin" (listas podem conter elementos duplicados)
+
+void imprimirNumeros() {
+  for (int i = 0; i < numeros.length; i++) {
+    print(numeros[i]);
+  }
+}
+
+void imprimirNomes() {
+  for (int i = 0; i < nomes.length; i++) {
+    print(nomes[i]);
+  }
+}
+
+// SET: uma colecao desordenada de elementos unicos, onde cada elemento pode ser de qualquer tipo de dado
+Set<String> frutas = {"maçã", "banana", "laranja"}; // set de frutas
+
+// MAP: uma colecao de pares chave-valor, onde cada chave é unica e pode ser de qualquer tipo de dado, e cada valor tambem pode ser de qualquer tipo de dado
+Map usuario = {
+  "nome": "Juanzin",
+  "idade": 20,
+  "altura": 183,
+};
+
+//usuario["nome"] -> "Juanzin"
+//usuario["idade"] -> 20
+//usuario["altura"] -> 183
+
   @override
   Widget build(BuildContext context) {
 
-   int minhaSoma = add(3,5);
-   print(minhaSoma); 
-   // nesse caso, imprime 8 no console
+   imprimirNumeros(); 
+   // chama a funcao que imprime os numeros da lista
+   imprimirNomes();
+   // chama a funcao que imprime os nomes da lista  
+
+   print(frutas);
+    // imprime o set de frutas, mas a ordem pode ser diferente da declaracao, pois sets sao desordenados
+
+  print(usuario["nome"]);
+  // nesse caso, imprime "juanzin"
+  print(usuario["idade"]);
+  // nesse caso, imprime 20
+  print(usuario["altura"]);
+  // nese caso, imprime 183
 
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
