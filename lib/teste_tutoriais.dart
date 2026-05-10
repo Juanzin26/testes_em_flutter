@@ -68,26 +68,34 @@ else if(condicao2) {
 }
 else {
   // executa um codigo se todas as condicoes anteriores forem falsas
-
 }
+
+
+switch (variavel) {
+  case valor1:
+    // executa um codigo se a variavel for igual a valor1
+    break;
+  case valor2:
+    // executa um codigo se a variavel for igual a valor2
+    break;
+  default:
+    // executa um codigo se a variavel nao for igual a nenhum dos valores anteriores, parecido com o else
+}
+
 
 */
 
   @override
   Widget build(BuildContext context) {
-    if (idade > 18) {
-      print("Voce é maior de idade");
-    } else {
-      print("Voce é menor de idade");
-    }
-    // nesse caso, imprime a primeira opcao
-
-    if (idade > 18 && ehIniciante) {
-      print("Voce é um adulto iniciante");
-    } else if (idade > 18 && !ehIniciante) {
-      print("Voce é um adulto experiente");
-    } else {
-      print("Voce é um jovem iniciante");
+    switch (nome) {
+      case "Juanzin":
+        print("O nome é Juanzin");
+        break;
+      case "Fernanda":
+        print("O nome é Fernanda");
+        break;
+      default:
+        print("O nome é desconhecido");
     }
     // nesse caso, imprime a primeira opcao
 
