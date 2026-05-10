@@ -24,6 +24,8 @@ Operadores Basicos
 2 * 3 = 6, multiplicacao
 6 / 2 = 3, divisao
 10 % 3 = 1, resto da divisao
+++i, i = i + 1, incremento
+i--, i = i - 1, decremento
 
 Operadores de comparacao
 1 == 1, igual a, true
@@ -82,23 +84,43 @@ switch (variavel) {
     // executa um codigo se a variavel nao for igual a nenhum dos valores anteriores, parecido com o else
 }
 
+for (inicializacao; condicao; incremento) {
+  // executa um codigo a partir da inicializacao, 
+  // enquanto a condicao for verdadeira, 
+  // e depois do codigo, executa o incremento
+}
+
+break: sai do loop. 
+
+continue: pula a iteracao atual e continua pra proxima
+
+
 
 */
 
   @override
   Widget build(BuildContext context) {
-    switch (nome) {
-      case "Juanzin":
-        print("O nome é Juanzin");
-        break;
-      case "Fernanda":
-        print("O nome é Fernanda");
-        break;
-      default:
-        print("O nome é desconhecido");
+    
+    for (int i = 0; i <= 5; i++) {
+      print(i); 
+      //nesse caso, imprime os numeros de 0 a 5+
     }
-    // nesse caso, imprime a primeira opcao
 
+    for (int i = 0; i <=8; i++) {
+      if(i == 6) {
+        break;
+      }
+    print(i); 
+      //nesse caso, imprime os numeros de 0 a 5, para quando chega no 6
+    }
+
+    for (int i = 0; i <=8; i++) {
+      if(i == 6) {
+        continue;
+      }
+    print(i); 
+      //nesse caso, imprime os numeros de 0 a 8, mas quando chega no 6, pula o numero e continua o loop
+    }
     return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(),
