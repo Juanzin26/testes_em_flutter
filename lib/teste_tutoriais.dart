@@ -15,6 +15,19 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.blue,
+        body: Center( 
+          child: Container(
+            height: 250,
+            width: 250,
+            decoration: BoxDecoration(
+              color: Colors.green,
+              borderRadius: BorderRadius.circular(20), // Borda arredondada
+            ),
+            padding: EdgeInsets.all(25), // Margem interna de todos os lados
+            // padding: EdgeInsets.only(top: 25, left: 25), Margem interna do topo e da esquerda
+            // padding: EdgeInsets.symmetric(horizontal: 25, vertical: 25), // Margem interna horizontal e vertical
+          ),
+        ),
       ),
     );
   }
