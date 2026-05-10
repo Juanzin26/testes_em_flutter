@@ -6,46 +6,23 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  MyApp({super.key});
 
+List nomes = ["Juan", "Fernanda", "Oliver"];
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: ListView( // o ListView permite criar uma lista rolável de widgets filhos.
-        // scrollDirection: Axis.horizontal, // para rolar horizontalmente
-        // scrollDirection: Axis.vertical, // para rolar verticalmente (definido assim por padrão)
+        body: ListView.builder( // ListView.builder cria uma lista dinâmica
+          itemCount: nomes.length, // itemCount para definir o número de itens na lista
+          itemBuilder: (context, index) => ListTile(  // ListTile para criar uma linha de item
+              title: Text(nomes[index]), // Text(nomes[index]) para mostrar o nome do item de index x
 
-          children: [
-
-            // Container 1 
-            Container(
-              height: 350,
-              // width: 350
-              color: Colors.green,
             ),
-
-            // Container 2
-            Container(
-              height: 350,
-              // width: 350
-              color: Colors.red,
-            ),
-
-
-            // Container 3
-              Container(
-                height: 350,
-                // width: 350
-                color: Colors.yellow,
-            ),
-
-
-          ],
-        )
-      ),
+          ),
+        ),
     );
   }
 }
