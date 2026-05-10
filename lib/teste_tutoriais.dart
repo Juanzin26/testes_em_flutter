@@ -15,6 +15,18 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.blue,
+        appBar: AppBar(
+          title: Text('Minha App Bar'),
+          backgroundColor: Colors.blue,
+          elevation: 0, // Remove a sombra da AppBar
+          leading: Icon(Icons.menu), // Ícone do menu à esquerda
+          actions: [
+            IconButton(
+              onPressed: () {},
+                icon: Icon(Icons.logout)// Ação a ser executada quando o ícone de pesquisa for pressionado
+            ),
+          ],
+        ),
         body: Center( 
           child: Container(
             height: 250,
