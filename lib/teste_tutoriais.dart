@@ -37,10 +37,27 @@ Operadores de comparacao
 1 >= 1, maior ou igual a, true
 1 <= 2, menor ou igual a, true
 
+Operadores logicos
+operador AND (&&): retorna true se os dois lados forem true,
+true && true = true, true && false = false, false && false = false
+exemplo: (idade > 18) && ehIniciante // retorna true nesse caso, pois ambos sao true
+
+operador OR (||): retorna true se pelo menos um dos lados for true,
+true || true = true, true || false = true, false || false = false
+exemplo: (idade > 18) || ehIniciante // retorna true nesse caso, pois pelo menos um dos lados, no caso, a idade > 18 é true
+
+operador NOT (!): retorna true se o lado for false e retorna false se o lado for true,
+!true = false, !false = true
+exemplo: !ehIniciante // retorna false nesse caso, pois ehIniciante é true, e o operador NOT inverte o valor pra false
+
+
  */
 
   @override
   Widget build(BuildContext context) {
+    print(ehIniciante && idade > 18); // imprime true
+    print(ehIniciante || idade > 18); // imprime true
+    print(!ehIniciante); // imprime false
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(),
