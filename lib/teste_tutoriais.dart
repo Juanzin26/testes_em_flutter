@@ -3,16 +3,13 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MyApp());
 
- print(9==9); // imprime true
- print(9!=9); // imprime false
- print(9>5); // imprime true
- print(9<5); // imprime false
- print(9>=9); // imprime true
- print(9<=9); // imprime true
 }
+
 
 class MyApp extends StatelessWidget {
   MyApp({super.key});
+
+// FUNDAMENTOS DE PROGRAMACAO
 
 // Variaveis
 String nome = "Juanzin";
@@ -49,16 +46,52 @@ exemplo: (idade > 18) || ehIniciante // retorna true nesse caso, pois pelo menos
 operador NOT (!): retorna true se o lado for false e retorna false se o lado for true,
 !true = false, !false = true
 exemplo: !ehIniciante // retorna false nesse caso, pois ehIniciante é true, e o operador NOT inverte o valor pra false
-
-
  */
+
+/*
+
+CONTROLE DE FLUXO
+
+
+if (condicao) {
+  // executa um codigo se a condicao for verdadeira
+} else {
+  // executa um codigo se a condicao for falsa
+}
+
+
+if(condicao1) {
+  // executa um codigo se a condicao1 for verdadeira
+}
+else if(condicao2) {
+  // executa um codigo se a condicao1 for falsa e a condicao2 for verdadeira
+}
+else {
+  // executa um codigo se todas as condicoes anteriores forem falsas
+
+}
+
+*/
 
   @override
   Widget build(BuildContext context) {
-    print(ehIniciante && idade > 18); // imprime true
-    print(ehIniciante || idade > 18); // imprime true
-    print(!ehIniciante); // imprime false
-    return MaterialApp(
+    if (idade > 18) {
+      print("Voce é maior de idade");
+    } else {
+      print("Voce é menor de idade");
+    }
+    // nesse caso, imprime a primeira opcao
+
+    if (idade > 18 && ehIniciante) {
+      print("Voce é um adulto iniciante");
+    } else if (idade > 18 && !ehIniciante) {
+      print("Voce é um adulto experiente");
+    } else {
+      print("Voce é um jovem iniciante");
+    }
+    // nesse caso, imprime a primeira opcao
+
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(),
 
