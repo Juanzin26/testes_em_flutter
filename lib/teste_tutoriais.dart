@@ -14,17 +14,30 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: GridView.builder(
-          itemCount: 64, // quantidade total de itens no grid
-          gridDelegate: 
-            SliverGridDelegateWithFixedCrossAxisCount( // define o layout do grid
-              crossAxisCount: 4 // quantidade de colunas
-            ),
-            itemBuilder: (context, index) => Container( // cada item do grid
+        body: Stack(  
+          alignment: Alignment.center, // Alinhamento central para os containers
+          children: [
+
+            Container(
+              height: 300,
+              width: 300,
               color: Colors.blue,
-              margin: EdgeInsets.all(2), // espaço entre os containers
-              ),
             ),
+
+            Container(
+              height: 200,
+              width: 200,
+              color: Colors.red
+            ),
+
+            Container(
+              height: 100,
+              width: 100,
+              color: Colors.green
+            ),
+
+          ],
+          ),
         ),
       );
     }
