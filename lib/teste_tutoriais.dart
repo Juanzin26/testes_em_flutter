@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'paginas/primeira_pagina.dart';
+import 'paginas/segunda_pagina.dart';
 
 void main() {
   runApp(MyApp());
@@ -6,35 +8,18 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
-
-  // funcao do que acontece quando o usuario clicar
-  void usuarioClicou() {
-    print('usuario clicou!');
-  }
+  const MyApp({super.key});
 
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: GestureDetector( // widget que detecta gestos, como cliques
-            onTap: usuarioClicou,
-            child: Container(
-              height: 200,
-              width: 200,
-              color: Colors.blue,
-              child: Center(
-              child: Text(
-                'Clique em mim!',
-              ),
-            ),
-            ),
-          ),
-        ),
-      ),
+      home: PrimeiraPagina(),
+      routes: {
+        '/primeira': (context) => PrimeiraPagina(),
+        '/segunda': (context) => SegundaPagina(),
+      },
       );
     }
   }
