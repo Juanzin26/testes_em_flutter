@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'paginas/primeira_pagina.dart';
 import 'paginas/home_page.dart';
 import 'paginas/settings_page.dart';
+import 'paginas/usuario.dart';
 
 
 void main() {
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         '/primeira': (context) => PrimeiraPagina(),
         '/homepage': (context) => HomePage(),
         '/settings': (context) => SettingsPage(),
+        '/usuario': (context) => UsuarioPage(),
       },
       );
     }

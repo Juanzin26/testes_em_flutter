@@ -1,7 +1,42 @@
 import "package:flutter/material.dart";
+import 'home_page.dart';
+import 'settings_page.dart';
+import 'usuario.dart';
 
-class PrimeiraPagina extends StatelessWidget {
-  const PrimeiraPagina({super.key});
+class PrimeiraPagina extends StatefulWidget {
+  PrimeiraPagina({super.key});
+
+  @override
+  State<PrimeiraPagina> createState() => _PrimeiraPaginaState();
+}
+
+
+class _PrimeiraPaginaState extends State<PrimeiraPagina> {
+
+// indice da pagina selecionada
+int _indexSelecionado = 0;
+
+// função para navegar entre as páginas da barra inferior
+void _navigateBottomBar(int index) {
+  setState(() {
+    _indexSelecionado = index;
+  });
+}
+
+// paginas do aplicativo
+  final List _paginas = [
+    // home page
+    HomePage(),
+
+    // usuario
+    UsuarioPage(),
+
+
+    // settings
+    SettingsPage(),
+
+  ];
+
 
   @override
   Widget build(BuildContext context) {
@@ -9,64 +44,34 @@ class PrimeiraPagina extends StatelessWidget {
       appBar: AppBar(
         title: Text('Primeira Página'),
       ),
-      drawer: Drawer(
-        backgroundColor: Colors.blue,
-        child: Column(
-          children: [
+      body: _paginas[_indexSelecionado], // Exibe a página selecionada
+      bottomNavigationBar: BottomNavigationBar( // Barra de navegação la embaixo
+        currentIndex: _indexSelecionado, // indice da pagina selecionada
+        onTap: _navigateBottomBar, // função para navegar entre as páginas
+        items: [
 
-            DrawerHeader(
-              child: Icon(
-                Icons.favorite, 
-                size: 48
-              ),
-            ),
+          //home
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Home',
+          ),
 
-            //home page list tile
-            ListTile(
-              leading: Icon(
-                Icons.home),
-              title: Text(
-                'Home'),
-              onTap: () {
-                // fechar o drawer
-                Navigator.pop(context);
-                // ir para a homepage
-                Navigator.pushNamed(context, '/homepage');
-              },
-            ),
+          //perfil
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person),
+            label: 'Profile',
+          ),
 
+          //settings
+          BottomNavigationBarItem(
+            
+            icon: Icon(Icons.settings),
+            label: 'Settings',
+          ),
 
-            //setting page list tile
-            ListTile(
-              leading: Icon(
-                Icons.settings),
-              title: Text(
-                'Settings'),
-              onTap: () {
-                // fechar o drawer
-                Navigator.pop(context);
-                // ir para as configurações
-                Navigator.pushNamed(context, '/settings');
-              },
-            ),
-
-          ],
-        ),
+        ],
       ),
     );
   }
 }
 
-
-
-/*
-outra maneira:
-
-            Navigator.push( // navega para a segunda página
-              context, 
-              MaterialPageRoute( // cria uma rota para a segunda página
-                builder: (context) => SegundaPagina()),
-            );
-          },
-
-*/
