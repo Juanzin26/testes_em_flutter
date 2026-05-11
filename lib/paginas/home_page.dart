@@ -1,13 +1,13 @@
 import "package:flutter/material.dart";
 
-class SegundaPagina extends StatelessWidget {
-  const SegundaPagina({super.key});
+class HomePage extends StatelessWidget {
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Segunda Página'),
+        title: Text('Home Page'),
       ),
     );
   }

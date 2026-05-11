@@ -9,14 +9,50 @@ class PrimeiraPagina extends StatelessWidget {
       appBar: AppBar(
         title: Text('Primeira Página'),
       ),
-      body: Center(
-        child: ElevatedButton( // botão para navegar para a segunda página
-          child: Text('Ir para a Segunda Página'),
-          onPressed: () { // executa uma ação quando o botão for pressionado
-          Navigator.pushNamed(context, '/segunda'); // navega para a segunda página
-          }, // necessario criar uma rota para a segunda pagina no teste_tutoriais.dart
+      drawer: Drawer(
+        backgroundColor: Colors.blue,
+        child: Column(
+          children: [
+
+            DrawerHeader(
+              child: Icon(
+                Icons.favorite, 
+                size: 48
+              ),
+            ),
+
+            //home page list tile
+            ListTile(
+              leading: Icon(
+                Icons.home),
+              title: Text(
+                'Home'),
+              onTap: () {
+                // fechar o drawer
+                Navigator.pop(context);
+                // ir para a homepage
+                Navigator.pushNamed(context, '/homepage');
+              },
+            ),
+
+
+            //setting page list tile
+            ListTile(
+              leading: Icon(
+                Icons.settings),
+              title: Text(
+                'Settings'),
+              onTap: () {
+                // fechar o drawer
+                Navigator.pop(context);
+                // ir para as configurações
+                Navigator.pushNamed(context, '/settings');
+              },
+            ),
+
+          ],
+        ),
       ),
-    ),
     );
   }
 }
